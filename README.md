@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/badge/license-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-v8.0.0-orange.svg)](https://www.npmjs.com/package/node-cbar)
+[![CodeQL](https://github.com/Nicat-dcw/node-cbar/actions/workflows/codeql.yml/badge.svg?event=deployment_status)](https://github.com/Nicat-dcw/node-cbar/actions/workflows/codeql.yml)
 
 ## Description
 
