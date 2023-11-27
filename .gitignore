@@ -3,7 +3,9 @@ node_modules/
 
 # Optional npm cache directory
 .npm
-
+.cache
+.upm
+.config
 # dotenv environment variables file
 .env
 
