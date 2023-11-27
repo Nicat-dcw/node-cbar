@@ -23,9 +23,9 @@ class CBAR extends Error {
     this.baseURL = baseURL;
   }
 
-  async convert(currencyType: string = "USD") {
+  async convert(amount: number, currencyType: string = "USD") {
     if (!currencyType) throw new Error("`currencyType` is required");
-    if(!this.dataMap.has(currencyType)) throw new Error("[CBAR]:", "The Currency Type Not Found")
+  
     try {
       const { data } = await axios.get(
         this.baseURL ?? `https://www.cbar.az/currencies/${this.date ?? "15.11.2023"}.xml`
@@ -34,6 +34,13 @@ class CBAR extends Error {
       const d = this.getRates(parsedData.ValCurs.ValType[1].Valute)
         
       const cData = this.dataMap.get(currencyType.toUpperCase());
+if(amount) {
+    const obj = {
+        ...cData,
+        convertedValue: amount * cData.value
+    };
+    return obj
+}
       return cData;
     } catch (error) {
       throw error;
@@ -72,3 +79,8 @@ class CBAR extends Error {
   }
 }
 export { CBAR, CurrencyTypes }
+const cl = new CBAR()
+cl.convert(2, CurrencyTypes.USD).then((result) => {
+    console.log(result);
+});
+console.log(CurrencyTypes.EUR)
