@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Unofficial Cbar.az nodejs Package",
   "main": "index.ts",
+  "types": "./src/merkezibank.global.ts"
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
